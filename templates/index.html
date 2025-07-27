@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Study Dimension</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f2f2f2; padding: 40px; }
+        h1 { color: #2c3e50; }
+        .section {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        a {
+            text-decoration: none;
+            color: #3498db;
+            font-size: 20px;
+        }
+        .footer {
+            margin-top: 50px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>📚 Welcome to The Study Dimension</h1>
+    <p>Select a section to view content:</p>
+    
+    {% for section in sections %}
+    <div class="section">
+        <a href="{{ url_for('files', section=section) }}">{{ section.capitalize() }}</a>
+    </div>
+    {% endfor %}
+
+    <div class="footer">
+        Made with ❤️ | <a href="https://t.me/yourgroup" target="_blank">Join Telegram</a>
+    </div>
+</body>
+</html>
